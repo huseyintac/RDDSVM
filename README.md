@@ -3,7 +3,7 @@
 
 # RDDSVM
 
-RDDSVM (RNA DNA differences with support vector machines) is an open source R program for prediction of A-to-I RNA editing sites from sequence using support vector machines.
+RDDSVM (RNA-DNA differences with support vector machines) is an open source R program for the prediction of candidate A-to-I RNA editing sites using machine learning (support vector machines) utilizing the sequence information flanking the editing sites.
 
 ## INTRODUCTION
 
