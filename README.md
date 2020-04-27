@@ -1,5 +1,6 @@
 
 
+
 # RDDSVM
 
 RDDSVM (RNA DNA differences with support vector machines) is an open source R program for prediction of A-to-I RNA editing sites from sequence using support vector machines.
@@ -18,14 +19,26 @@ SVM classifier showed high performance on experimentally verified data providing
 RDDSVM was implemented using R version 3.6.3 and works on both Windows and Unix. The performance of the program was not tested with previous versions. Additionally RDDSVM requires R libraries BSgenome.Hsapiens.UCSC.hg19, e1071, optparse. The code will try to download those packages if they are not already installed.
 
 ## DOWNLOAD
+
+You can easily install RDDSVM by the following commands:
+
+    git clone https://github.com/huseyintac/RDDSVM.git
+
+RDDSVM is a stand-alone script and can be simply launched by
+
+    cd RDDSVM
+    Rscript RDDSVM.R -f sample_input.csv -o output.txt 
+
 ## INPUT FILES
-RDDSVM requires  input files a simple textual files with three tabulated columns including:
+RDDSVM requires  input files as simple textual files with three tabulated columns including:
 
 -   chromosome number or name (1,2,3,....,X, Y)
 -   coordinate of the position of A-to-I editing (1-based)
 -   strand information (+ or -)
 
-Sample input file
+A sample input file is provided in the package "sample_input.csv"
+
+Sample input file:
 
 14	33084977	+
 
@@ -42,15 +55,15 @@ The output file is going to be similar to the input file with the addition of 2 
 
 ### Sample output file
 
-chr14	33084977	+	AAA....CUC	1
+14	33084977	+	AAA....CUC	1
 
-chr15	31229832	-	GUU....UAC	1
+15	31229832	-	GUU....UAC	1
 
-chr9	112781854	+	UAG....AUA	-1
+9	112781854	+	UAG....AUA	-1
 
-chr2	65235663	-	AGC....UUA	1
+2	65235663	-	AGC....UUA	1
 
-chr2	198168947	-	GGU....GCAC	1
+2	198168947	-	GGU....GCAC	1
 
 
 RDDSVM will also print out SVM training results and query predictions results as a whole. 
@@ -84,4 +97,4 @@ Options:
 An input file should be provided with -f option. By default an output file named "out.txt" will be created to the current folder. The name and location of the output file can be provided with -o option. 
 
 ### Example:
-Rscript RDDSVM.R -f /home/user/input.txt -o /home/user/output.txt 
+    Rscript RDDSVM.R -f sample_input.csv -o output.txt 
